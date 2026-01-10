@@ -132,3 +132,23 @@
 - [x] Notificações para aniversários (no dia)
 - [x] Configurações de lembretes por tipo
 - [x] Persistência de lembretes agendados
+
+
+## Sincronização com Versão Web (v1.8)
+
+### Sistema de Engajamento
+- [x] Serviço de pontuação de engajamento
+- [x] Níveis de engajamento (Semente, Broto, Planta, Árvore, Videira)
+- [x] Sistema de badges/conquistas
+- [x] Ranking de engajamento da célula
+
+### Sistema de Conexões
+- [x] Serviço de reuniões de conexão
+- [x] Tela de registro de conexões
+- [x] Histórico de encontros de discipulado
+
+### Multiplicação de Células
+- [x] Serviço de multiplicação
+- [x] Wizard de criação de multiplicação
+- [x] Alocação de membros entre células
+- [x] Dashboard de multiplicação

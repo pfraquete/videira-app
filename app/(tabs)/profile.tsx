@@ -260,6 +260,42 @@ export default function ProfileScreen() {
 
             <TouchableOpacity
               className="flex-row items-center p-4"
+              onPress={() => router.push('/engagement' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-yellow-500/20 items-center justify-center">
+                <Text className="text-lg">🏆</Text>
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Engajamento</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className="flex-row items-center p-4"
+              onPress={() => router.push('/connections' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-cyan-500/20 items-center justify-center">
+                <Text className="text-lg">🤝</Text>
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Conexões</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className="flex-row items-center p-4"
+              onPress={() => router.push('/multiplication' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-purple-500/20 items-center justify-center">
+                <Text className="text-lg">🌱</Text>
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Multiplicação</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className="flex-row items-center p-4"
               activeOpacity={0.7}
             >
               <View className="w-10 h-10 rounded-full bg-primary/20 items-center justify-center">
