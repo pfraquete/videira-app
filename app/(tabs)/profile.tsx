@@ -259,6 +259,18 @@ export default function ProfileScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
+              className="flex-row items-center p-4 border-b border-border"
+              onPress={() => router.push('/gallery' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-indigo-500/20 items-center justify-center">
+                <Text className="text-lg">📷</Text>
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Galeria de Fotos</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
               className="flex-row items-center p-4"
               onPress={() => router.push('/engagement' as any)}
               activeOpacity={0.7}

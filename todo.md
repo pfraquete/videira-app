@@ -152,3 +152,21 @@
 - [x] Wizard de criação de multiplicação
 - [x] Alocação de membros entre células
 - [x] Dashboard de multiplicação
+
+
+## Novas Funcionalidades (v1.9)
+
+### Galeria de Fotos (App Mobile)
+- [x] Serviço de galeria com upload de imagens
+- [x] Tela de galeria com grid de fotos
+- [x] Upload de fotos da câmera ou galeria do dispositivo
+- [x] Visualização em tela cheia
+- [x] Organização por álbuns
+- [x] Compartilhamento de fotos
+
+### Galeria de Fotos (Versão Web)
+- [x] Serviço de galeria para web
+- [x] Componente de grid de fotos
+- [x] Upload de fotos
+- [x] Visualização em modal
+- [x] Organização por álbuns
