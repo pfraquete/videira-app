@@ -79,3 +79,12 @@
 - [x] Cache de membros para modo offline
 - [x] Cache de eventos para modo offline
 - [x] Indicador de modo offline na interface
+
+
+## Novas Funcionalidades (v1.4)
+- [x] Integração WhatsApp - botão para enviar mensagens aos membros
+- [x] Sistema de metas mensais da célula
+- [x] Tela de configuração de metas
+- [x] Visualização de progresso das metas
+- [x] Suporte a tema escuro (dark mode)
+- [x] Toggle de tema nas configurações

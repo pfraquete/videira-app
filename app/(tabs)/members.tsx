@@ -20,6 +20,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { useAuth } from "@/lib/auth-context";
 import { DataService } from "@/lib/data-service";
+import { WhatsAppService } from "@/lib/whatsapp-service";
 import { useColors } from "@/hooks/use-colors";
 import { Member } from "@/lib/supabase";
 
@@ -165,8 +166,19 @@ export default function MembersScreen() {
         </View>
       </View>
       {item.telefone && (
-        <TouchableOpacity className="p-2">
-          <IconSymbol name="phone.fill" size={20} color={colors.primary} />
+        <TouchableOpacity 
+          className="p-2 bg-success/20 rounded-lg"
+          onPress={async (e) => {
+            e.stopPropagation();
+            const success = await WhatsAppService.openChat(item.telefone);
+            if (!success) {
+              Alert.alert('Erro', 'Não foi possível abrir o WhatsApp');
+            } else if (Platform.OS !== 'web') {
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+            }
+          }}
+        >
+          <IconSymbol name="paperplane.fill" size={20} color="#22c55e" />
         </TouchableOpacity>
       )}
     </TouchableOpacity>

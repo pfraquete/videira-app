@@ -61,6 +61,11 @@ const MAPPING = {
   "arrow.up.right": "trending-up",
   "arrow.down.right": "trending-down",
   
+  // Theme
+  "sun.max.fill": "light-mode",
+  "moon.fill": "dark-mode",
+  "gear": "settings",
+  
   // Misc
   "magnifyingglass": "search",
   "phone.fill": "phone",

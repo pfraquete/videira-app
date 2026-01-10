@@ -17,6 +17,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { useAuth } from "@/lib/auth-context";
 import { DataService } from "@/lib/data-service";
+import { WhatsAppService } from "@/lib/whatsapp-service";
 import { useColors } from "@/hooks/use-colors";
 import { Member } from "@/lib/supabase";
 
@@ -269,10 +270,27 @@ export default function MemberDetailScreen() {
                   placeholderTextColor={colors.muted}
                 />
               ) : (
-                <View className="bg-surface border border-border rounded-xl px-4 py-3">
-                  <Text className={member.telefone ? "text-foreground" : "text-muted"}>
-                    {member.telefone || 'Não informado'}
-                  </Text>
+                <View className="flex-row items-center gap-2">
+                  <View className="flex-1 bg-surface border border-border rounded-xl px-4 py-3">
+                    <Text className={member.telefone ? "text-foreground" : "text-muted"}>
+                      {member.telefone || 'Não informado'}
+                    </Text>
+                  </View>
+                  {member.telefone && (
+                    <TouchableOpacity
+                      className="bg-success/20 p-3 rounded-xl"
+                      onPress={async () => {
+                        const success = await WhatsAppService.openChat(member.telefone);
+                        if (!success) {
+                          Alert.alert('Erro', 'Não foi possível abrir o WhatsApp');
+                        } else if (Platform.OS !== 'web') {
+                          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        }
+                      }}
+                    >
+                      <IconSymbol name="paperplane.fill" size={20} color="#22c55e" />
+                    </TouchableOpacity>
+                  )}
                 </View>
               )}
             </View>
