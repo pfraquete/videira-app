@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import { useRouter } from "expo-router";
 import {
   View,
   Text,
@@ -33,6 +34,7 @@ const MEMBER_ROLES = [
 ];
 
 export default function MembersScreen() {
+  const router = useRouter();
   const { user } = useAuth();
   const colors = useColors();
   
@@ -134,6 +136,7 @@ export default function MembersScreen() {
     <TouchableOpacity
       className="bg-surface rounded-xl p-4 mb-3 border border-border flex-row items-center"
       activeOpacity={0.7}
+      onPress={() => router.push(`/member/${item.id}`)}
     >
       <View 
         className="w-12 h-12 rounded-full items-center justify-center"

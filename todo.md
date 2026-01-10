@@ -45,3 +45,12 @@
 - [x] Gerar logo do app
 - [x] Configurar splash screen
 - [x] Configurar ícones do app
+
+
+## Novas Funcionalidades (v1.1)
+- [x] Tela de detalhes do membro
+- [x] Edição de membro existente
+- [x] Exclusão de membro com confirmação
+- [x] Dashboard específico para Pastor (métricas das células)
+- [x] Dashboard específico para Discipulador (métricas das células supervisionadas)
+- [x] Listagem de células para Pastor/Discipulador

@@ -264,6 +264,40 @@ export default function HomeScreen() {
           </View>
         )}
 
+        {/* Dashboard for Pastor */}
+        {user?.role === 'pastor' && (
+          <View className="px-6 mb-6">
+            <TouchableOpacity
+              className="bg-primary rounded-xl p-6 items-center"
+              onPress={() => router.push("/dashboard/pastor")}
+              activeOpacity={0.8}
+            >
+              <IconSymbol name="chart.bar.fill" size={40} color="#ffffff" />
+              <Text className="text-background font-bold text-lg mt-3">Acessar Dashboard do Pastor</Text>
+              <Text className="text-background/70 text-sm mt-1 text-center">
+                Visualize métricas de discipuladores e células
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
+
+        {/* Dashboard for Discipulador */}
+        {user?.role === 'discipulador' && (
+          <View className="px-6 mb-6">
+            <TouchableOpacity
+              className="bg-primary rounded-xl p-6 items-center"
+              onPress={() => router.push("/dashboard/discipulador")}
+              activeOpacity={0.8}
+            >
+              <IconSymbol name="chart.bar.fill" size={40} color="#ffffff" />
+              <Text className="text-background font-bold text-lg mt-3">Acessar Dashboard do Discipulador</Text>
+              <Text className="text-background/70 text-sm mt-1 text-center">
+                Acompanhe suas células e líderes
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
+
         {/* Empty state for participants */}
         {user?.role === 'participante' && (
           <View className="px-6 items-center py-12">
