@@ -141,6 +141,7 @@ export default function ProfileScreen() {
             <TouchableOpacity
               className="flex-row items-center p-4 border-b border-border"
               activeOpacity={0.7}
+              onPress={() => router.push('/profile/edit' as any)}
             >
               <View className="w-10 h-10 rounded-full bg-primary/20 items-center justify-center">
                 <IconSymbol name="pencil" size={20} color={colors.primary} />

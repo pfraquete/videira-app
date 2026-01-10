@@ -1,4 +1,5 @@
 import { supabase, Cell, Member, Attendance, CellEvent } from './supabase';
+import { CacheService } from './cache-service';
 
 export class DataService {
   // ==================== CELL OPERATIONS ====================
@@ -78,9 +79,18 @@ export class DataService {
   // ==================== MEMBER OPERATIONS ====================
 
   /**
-   * Listar membros da célula
+   * Listar membros da célula (com suporte a cache offline)
    */
   static async getMembers(userId: string): Promise<Member[]> {
+    // Check if offline and try to get from cache
+    const isOffline = await CacheService.isOffline();
+    if (isOffline) {
+      const cachedMembers = await CacheService.getCachedMembers(userId);
+      if (cachedMembers) {
+        return cachedMembers;
+      }
+    }
+
     const { data, error } = await supabase
       .from('members')
       .select('*')
@@ -89,10 +99,18 @@ export class DataService {
 
     if (error) {
       console.error('Error fetching members:', error);
-      return [];
+      // Try to return cached data on error
+      const cachedMembers = await CacheService.getCachedMembers(userId);
+      return cachedMembers || [];
     }
 
-    return data as Member[];
+    const members = data as Member[];
+    
+    // Cache the data for offline use
+    await CacheService.cacheMembers(userId, members);
+    await CacheService.setLastSync();
+
+    return members;
   }
 
   /**

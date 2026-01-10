@@ -33,12 +33,12 @@
 
 ## Eventos
 - [x] Lista de eventos (no dashboard)
-- [ ] Detalhe do evento
-- [ ] Criar novo evento
+- [x] Detalhe do evento
+- [x] Criar novo evento
 
 ## Perfil
 - [x] Tela de perfil do usuário
-- [ ] Editar perfil
+- [x] Editar perfil
 - [x] Logout
 
 ## Branding
@@ -64,3 +64,18 @@
 - [x] Filtros por período no histórico
 - [x] Exportação de relatório de membros (texto)
 - [x] Exportação de relatório de presenças (texto)
+
+
+## Novas Funcionalidades (v1.3)
+- [x] Tela de listagem de eventos
+- [x] Tela de criação de evento (data, horário, descrição)
+- [x] Tela de detalhes do evento
+- [x] Edição de evento existente
+- [x] Exclusão de evento com confirmação
+- [x] Tela de edição de perfil
+- [x] Upload de foto de perfil
+- [x] Atualização de nome e informações de contato
+- [x] Serviço de cache local (AsyncStorage)
+- [x] Cache de membros para modo offline
+- [x] Cache de eventos para modo offline
+- [x] Indicador de modo offline na interface

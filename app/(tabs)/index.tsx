@@ -11,9 +11,11 @@ import { useRouter } from "expo-router";
 
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { OfflineBanner } from "@/components/offline-indicator";
 import { useAuth } from "@/lib/auth-context";
 import { DataService } from "@/lib/data-service";
 import { useColors } from "@/hooks/use-colors";
+import { useOffline } from "@/hooks/use-offline";
 import { Member, CellEvent, Cell } from "@/lib/supabase";
 
 interface Stats {
@@ -194,10 +196,15 @@ export default function HomeScreen() {
               <IconSymbol name="plus.circle.fill" size={28} color={colors.primary} />
               <Text className="text-foreground font-medium mt-2">Novo Membro</Text>
             </TouchableOpacity>
-          </View>
+        </View>
         </View>
 
-        {/* Birthdays */}
+        {/* Offline Banner */}
+        <View className="px-6">
+          <OfflineBanner />
+        </View>
+
+        {/* Stats Cards */}
         {birthdays.length > 0 && (
           <View className="px-6 mb-6">
             <Text className="text-lg font-bold text-foreground mb-4">
@@ -229,11 +236,20 @@ export default function HomeScreen() {
         )}
 
         {/* Upcoming Events */}
-        {upcomingEvents.length > 0 && (
-          <View className="px-6 mb-6">
-            <Text className="text-lg font-bold text-foreground mb-4">
+        <View className="px-6 mb-6">
+          <View className="flex-row items-center justify-between mb-4">
+            <Text className="text-lg font-bold text-foreground">
               Próximos Eventos
             </Text>
+            <TouchableOpacity
+              className="flex-row items-center"
+              onPress={() => router.push('/events' as any)}
+            >
+              <Text className="text-primary font-medium mr-1">Ver todos</Text>
+              <IconSymbol name="chevron.right" size={16} color={colors.primary} />
+            </TouchableOpacity>
+          </View>
+          {upcomingEvents.length > 0 ? (
             <View className="gap-3">
               {upcomingEvents.map((event) => (
                 <View
@@ -261,8 +277,18 @@ export default function HomeScreen() {
                 </View>
               ))}
             </View>
-          </View>
-        )}
+          ) : (
+            <TouchableOpacity
+              className="bg-surface rounded-xl p-6 border border-border items-center"
+              onPress={() => router.push('/events/create' as any)}
+              activeOpacity={0.7}
+            >
+              <IconSymbol name="calendar.badge.plus" size={32} color={colors.muted} />
+              <Text className="text-muted mt-2">Nenhum evento próximo</Text>
+              <Text className="text-primary font-medium mt-1">Criar novo evento</Text>
+            </TouchableOpacity>
+          )}
+        </View>
 
         {/* Dashboard for Pastor */}
         {user?.role === 'pastor' && (

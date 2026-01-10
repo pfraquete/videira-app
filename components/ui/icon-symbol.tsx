@@ -71,6 +71,14 @@ const MAPPING = {
   "trash.fill": "delete",
   "pencil": "edit",
   "gift.fill": "card-giftcard",
+  
+  // Connectivity
+  "wifi": "wifi",
+  "wifi.slash": "wifi-off",
+  
+  // Media
+  "camera.fill": "photo-camera",
+  "photo.fill": "photo",
 } as IconMapping;
 
 /**
