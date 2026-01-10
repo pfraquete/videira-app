@@ -195,3 +195,7 @@
 - [x] Serviço de comentários para web
 - [x] Componente de comentários no modal de foto
 - [x] Interface de adicionar comentários
+
+
+## Correções v2.0.1
+- [x] Adicionar link para Escala de Servos no menu de Perfil do app mobile
