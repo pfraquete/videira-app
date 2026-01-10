@@ -14,10 +14,51 @@ type IconSymbolName = keyof typeof MAPPING;
  * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
  */
 const MAPPING = {
+  // Navigation
   "house.fill": "home",
+  "person.fill": "person",
+  "person.2.fill": "people",
+  "person.3.fill": "groups",
+  "gearshape.fill": "settings",
+  
+  // Actions
   "paperplane.fill": "send",
+  "plus": "add",
+  "plus.circle.fill": "add-circle",
+  "checkmark": "check",
+  "checkmark.circle.fill": "check-circle",
+  "xmark": "close",
+  "xmark.circle.fill": "cancel",
+  
+  // Content
+  "calendar": "event",
+  "calendar.badge.plus": "event-note",
+  "clock.fill": "schedule",
+  "bell.fill": "notifications",
+  "chart.bar.fill": "bar-chart",
+  "list.bullet": "list",
+  
+  // Navigation arrows
   "chevron.left.forwardslash.chevron.right": "code",
   "chevron.right": "chevron-right",
+  "chevron.left": "chevron-left",
+  "arrow.left": "arrow-back",
+  "arrow.right": "arrow-forward",
+  
+  // Status
+  "exclamationmark.triangle.fill": "warning",
+  "info.circle.fill": "info",
+  "questionmark.circle.fill": "help",
+  
+  // Misc
+  "magnifyingglass": "search",
+  "phone.fill": "phone",
+  "envelope.fill": "email",
+  "location.fill": "location-on",
+  "star.fill": "star",
+  "heart.fill": "favorite",
+  "trash.fill": "delete",
+  "pencil": "edit",
 } as IconMapping;
 
 /**
