@@ -199,6 +199,18 @@ export default function ProfileScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
+              className="flex-row items-center p-4 border-b border-border"
+              onPress={() => router.push('/share/cell' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-[#25D366]/20 items-center justify-center">
+                <IconSymbol name="qrcode" size={20} color="#25D366" />
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Convidar para Célula</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
               className="flex-row items-center p-4"
               activeOpacity={0.7}
             >

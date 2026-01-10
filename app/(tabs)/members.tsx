@@ -23,6 +23,7 @@ import { DataService } from "@/lib/data-service";
 import { WhatsAppService } from "@/lib/whatsapp-service";
 import { useColors } from "@/hooks/use-colors";
 import { Member } from "@/lib/supabase";
+import { MemberFiltersModal, MemberFilters, DEFAULT_FILTERS, filterMembers } from "@/components/member-filters-modal";
 
 const MEMBER_ROLES = [
   'Líder',
@@ -54,6 +55,14 @@ export default function MembersScreen() {
     email: "",
     funcao: "Membro",
   });
+  
+  // Filters
+  const [showFiltersModal, setShowFiltersModal] = useState(false);
+  const [filters, setFilters] = useState<MemberFilters>(DEFAULT_FILTERS);
+  const activeFiltersCount = filters.status.length + filters.role.length + 
+    (filters.birthdayMonth !== null ? 1 : 0) + 
+    (filters.birthdayWeek ? 1 : 0) + 
+    (filters.gender !== null ? 1 : 0);
 
   const loadMembers = useCallback(async () => {
     if (!user) return;
@@ -74,17 +83,22 @@ export default function MembersScreen() {
   }, [loadMembers]);
 
   useEffect(() => {
+    let result = members;
+    
+    // Apply advanced filters first
+    result = filterMembers(result, filters);
+    
+    // Then apply search query
     if (searchQuery) {
-      const filtered = members.filter(m => 
+      result = result.filter(m => 
         m.nome.toLowerCase().includes(searchQuery.toLowerCase()) ||
         m.telefone?.includes(searchQuery) ||
         m.funcao?.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      setFilteredMembers(filtered);
-    } else {
-      setFilteredMembers(members);
     }
-  }, [searchQuery, members]);
+    
+    setFilteredMembers(result);
+  }, [searchQuery, members, filters]);
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
@@ -207,16 +221,36 @@ export default function MembersScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Search */}
-        <View className="flex-row items-center bg-surface border border-border rounded-xl px-4 py-2">
-          <IconSymbol name="magnifyingglass" size={20} color={colors.muted} />
-          <TextInput
-            className="flex-1 ml-2 text-foreground"
-            placeholder="Buscar membro..."
-            placeholderTextColor={colors.muted}
-            value={searchQuery}
-            onChangeText={setSearchQuery}
-          />
+        {/* Search and Filters */}
+        <View className="flex-row items-center gap-2">
+          <View className="flex-1 flex-row items-center bg-surface border border-border rounded-xl px-4 py-2">
+            <IconSymbol name="magnifyingglass" size={20} color={colors.muted} />
+            <TextInput
+              className="flex-1 ml-2 text-foreground"
+              placeholder="Buscar membro..."
+              placeholderTextColor={colors.muted}
+              value={searchQuery}
+              onChangeText={setSearchQuery}
+            />
+          </View>
+          <TouchableOpacity
+            className={`p-3 rounded-xl border ${activeFiltersCount > 0 ? 'bg-primary border-primary' : 'bg-surface border-border'}`}
+            onPress={() => setShowFiltersModal(true)}
+            activeOpacity={0.7}
+          >
+            <View className="relative">
+              <IconSymbol 
+                name="list.bullet" 
+                size={20} 
+                color={activeFiltersCount > 0 ? '#ffffff' : colors.muted} 
+              />
+              {activeFiltersCount > 0 && (
+                <View className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-white items-center justify-center">
+                  <Text className="text-primary text-[10px] font-bold">{activeFiltersCount}</Text>
+                </View>
+              )}
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -339,6 +373,14 @@ export default function MembersScreen() {
           </View>
         </KeyboardAvoidingView>
       </Modal>
+
+      {/* Filters Modal */}
+      <MemberFiltersModal
+        visible={showFiltersModal}
+        onClose={() => setShowFiltersModal(false)}
+        filters={filters}
+        onApply={setFilters}
+      />
     </ScreenContainer>
   );
 }

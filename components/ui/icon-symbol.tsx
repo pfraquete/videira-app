@@ -84,6 +84,11 @@ const MAPPING = {
   // Media
   "camera.fill": "photo-camera",
   "photo.fill": "photo",
+  
+  // QR Code and messaging
+  "qrcode": "qr-code-2",
+  "message.fill": "message",
+  "doc.on.doc": "content-copy",
 } as IconMapping;
 
 /**

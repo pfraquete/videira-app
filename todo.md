@@ -88,3 +88,15 @@
 - [x] Visualização de progresso das metas
 - [x] Suporte a tema escuro (dark mode)
 - [x] Toggle de tema nas configurações
+
+
+## Novas Funcionalidades (v1.5)
+- [x] Sincronização automática quando voltar online
+- [x] Fila de operações pendentes offline
+- [x] Indicador de sincronização em andamento
+- [x] Filtros avançados por data de aniversário
+- [x] Filtros avançados por status do membro
+- [x] Modal de filtros na lista de membros
+- [x] QR code para convite de célula
+- [x] Tela de compartilhamento de célula
+- [x] Deep link para entrada na célula
