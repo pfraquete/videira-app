@@ -211,6 +211,42 @@ export default function ProfileScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity
+              className="flex-row items-center p-4 border-b border-border"
+              onPress={() => router.push('/chat' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-blue-500/20 items-center justify-center">
+                <IconSymbol name="message.fill" size={20} color="#3B82F6" />
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Mensagens</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className="flex-row items-center p-4 border-b border-border"
+              onPress={() => router.push('/prayers' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-pink-500/20 items-center justify-center">
+                <IconSymbol name="heart.fill" size={20} color="#EC4899" />
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Pedidos de Oração</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className="flex-row items-center p-4 border-b border-border"
+              onPress={() => router.push('/calendar' as any)}
+              activeOpacity={0.7}
+            >
+              <View className="w-10 h-10 rounded-full bg-orange-500/20 items-center justify-center">
+                <IconSymbol name="calendar" size={20} color="#F97316" />
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Calendário</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
               className="flex-row items-center p-4"
               activeOpacity={0.7}
             >

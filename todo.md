@@ -100,3 +100,25 @@
 - [x] QR code para convite de célula
 - [x] Tela de compartilhamento de célula
 - [x] Deep link para entrada na célula
+
+
+## Novas Funcionalidades (v1.6)
+
+### Chat Interno
+- [x] Serviço de mensagens entre líder e membros
+- [x] Tela de lista de conversas
+- [x] Tela de chat individual
+- [x] Notificações de novas mensagens (badge de não lidas)
+
+### Pedidos de Oração
+- [x] Serviço de pedidos de oração
+- [x] Tela de listagem de pedidos
+- [x] Criar novo pedido de oração
+- [x] Marcar pedido como respondido
+- [x] Orar por um pedido (contador de orações)
+
+### Calendário Visual
+- [x] Componente de calendário mensal
+- [x] Visualização de eventos no calendário
+- [x] Visualização de aniversários no calendário
+- [x] Navegação entre meses
