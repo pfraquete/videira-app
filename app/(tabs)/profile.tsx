@@ -152,11 +152,24 @@ export default function ProfileScreen() {
             <TouchableOpacity
               className="flex-row items-center p-4 border-b border-border"
               activeOpacity={0.7}
+              onPress={() => router.push('/settings/notifications')}
             >
               <View className="w-10 h-10 rounded-full bg-primary/20 items-center justify-center">
                 <IconSymbol name="bell.fill" size={20} color={colors.primary} />
               </View>
               <Text className="flex-1 ml-3 text-foreground font-medium">Notificações</Text>
+              <IconSymbol name="chevron.right" size={20} color={colors.muted} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className="flex-row items-center p-4 border-b border-border"
+              activeOpacity={0.7}
+              onPress={() => router.push('/reports' as any)}
+            >
+              <View className="w-10 h-10 rounded-full bg-primary/20 items-center justify-center">
+                <IconSymbol name="doc.fill" size={20} color={colors.primary} />
+              </View>
+              <Text className="flex-1 ml-3 text-foreground font-medium">Relatórios</Text>
               <IconSymbol name="chevron.right" size={20} color={colors.muted} />
             </TouchableOpacity>
 
@@ -194,7 +207,7 @@ export default function ProfileScreen() {
 
         {/* Version */}
         <View className="items-center pb-6">
-          <Text className="text-muted text-sm">Videira App v1.0.0</Text>
+          <Text className="text-muted text-sm">Videira App v1.2.0</Text>
         </View>
       </ScrollView>
     </ScreenContainer>

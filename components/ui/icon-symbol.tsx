@@ -50,6 +50,17 @@ const MAPPING = {
   "info.circle.fill": "info",
   "questionmark.circle.fill": "help",
   
+  // Documents
+  "doc.fill": "description",
+  "doc.text.fill": "article",
+  "arrow.down.doc.fill": "file-download",
+  "square.and.arrow.up": "share",
+  "arrow.clockwise": "refresh",
+  
+  // Trends
+  "arrow.up.right": "trending-up",
+  "arrow.down.right": "trending-down",
+  
   // Misc
   "magnifyingglass": "search",
   "phone.fill": "phone",
@@ -59,6 +70,7 @@ const MAPPING = {
   "heart.fill": "favorite",
   "trash.fill": "delete",
   "pencil": "edit",
+  "gift.fill": "card-giftcard",
 } as IconMapping;
 
 /**

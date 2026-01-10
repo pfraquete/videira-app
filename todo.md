@@ -15,21 +15,21 @@
 ## Dashboard
 - [x] Dashboard do Líder com estatísticas
 - [x] Dashboard do Participante
-- [ ] Dashboard do Pastor
-- [ ] Dashboard do Discipulador
+- [x] Dashboard do Pastor
+- [x] Dashboard do Discipulador
 
 ## Membros
 - [x] Lista de membros da célula
 - [x] Busca e filtros de membros
-- [ ] Detalhe do membro
+- [x] Detalhe do membro
 - [x] Adicionar novo membro
-- [ ] Editar membro
+- [x] Editar membro
 
 ## Presenças
 - [x] Tela de registro de presenças
 - [x] Seleção de data
 - [x] Toggle de presença por membro
-- [ ] Histórico de presenças
+- [x] Histórico de presenças
 
 ## Eventos
 - [x] Lista de eventos (no dashboard)
@@ -54,3 +54,13 @@
 - [x] Dashboard específico para Pastor (métricas das células)
 - [x] Dashboard específico para Discipulador (métricas das células supervisionadas)
 - [x] Listagem de células para Pastor/Discipulador
+
+## Novas Funcionalidades (v1.2)
+- [x] Notificações push para aniversários
+- [x] Notificações push para eventos próximos
+- [x] Configuração de permissões de notificação
+- [x] Histórico de presenças com gráficos
+- [x] Gráfico de evolução de presença ao longo do tempo
+- [x] Filtros por período no histórico
+- [x] Exportação de relatório de membros (texto)
+- [x] Exportação de relatório de presenças (texto)

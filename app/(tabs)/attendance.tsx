@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import * as Haptics from "expo-haptics";
 
+import { useRouter } from "expo-router";
+
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { useAuth } from "@/lib/auth-context";
@@ -23,6 +25,7 @@ interface MemberAttendance extends Member {
 }
 
 export default function AttendanceScreen() {
+  const router = useRouter();
   const { user } = useAuth();
   const colors = useColors();
   
@@ -179,7 +182,16 @@ export default function AttendanceScreen() {
     <ScreenContainer>
       {/* Header */}
       <View className="px-6 pt-4 pb-4">
-        <Text className="text-2xl font-bold text-foreground mb-4">Presenças</Text>
+        <View className="flex-row items-center justify-between mb-4">
+          <Text className="text-2xl font-bold text-foreground">Presenças</Text>
+          <TouchableOpacity
+            className="flex-row items-center bg-surface px-3 py-2 rounded-lg border border-border"
+            onPress={() => router.push('/history/attendance')}
+          >
+            <IconSymbol name="chart.bar.fill" size={18} color={colors.primary} />
+            <Text className="text-primary font-medium ml-1">Histórico</Text>
+          </TouchableOpacity>
+        </View>
 
         {/* Date Selector */}
         <View className="flex-row items-center justify-between bg-surface rounded-xl p-2 border border-border">
