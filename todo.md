@@ -122,3 +122,13 @@
 - [x] Visualização de eventos no calendário
 - [x] Visualização de aniversários no calendário
 - [x] Navegação entre meses
+
+
+## Novas Funcionalidades (v1.7)
+
+### Lembretes Automáticos
+- [x] Serviço de agendamento de lembretes
+- [x] Notificações para eventos próximos (1 dia antes, 1 hora antes)
+- [x] Notificações para aniversários (no dia)
+- [x] Configurações de lembretes por tipo
+- [x] Persistência de lembretes agendados

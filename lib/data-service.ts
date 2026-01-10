@@ -1,5 +1,11 @@
-import { supabase, Cell, Member, Attendance, CellEvent } from './supabase';
+import { supabase } from './supabase';
 import { CacheService } from './cache-service';
+import { ReminderService } from './reminder-service';
+
+// Tipos básicos
+export type Cell = any;
+export type Member = any;
+export type Attendance = any;
 
 export class DataService {
   // ==================== CELL OPERATIONS ====================
@@ -156,6 +162,14 @@ export class DataService {
       return null;
     }
 
+    // Agendar lembrete de aniversário se tiver data de nascimento
+    if (data && data.data_nascimento) {
+      const birthDate = new Date(data.data_nascimento);
+      const currentYear = new Date().getFullYear();
+      const birthdayThisYear = new Date(currentYear, birthDate.getMonth(), birthDate.getDate());
+      await ReminderService.scheduleBirthdayReminder(String(data.id), data.nome, birthdayThisYear);
+    }
+
     return data as Member;
   }
 
@@ -191,6 +205,9 @@ export class DataService {
       console.error('Error deleting member:', error);
       return false;
     }
+
+    // Cancelar lembrete de aniversário do membro excluído
+    await ReminderService.cancelBirthdayReminder(String(memberId));
 
     return true;
   }
@@ -313,7 +330,7 @@ export class DataService {
   /**
    * Listar eventos da célula
    */
-  static async getEvents(userId: string): Promise<CellEvent[]> {
+  static async getEvents(userId: string): Promise<any[]> {
     const { data, error } = await supabase
       .from('events')
       .select('*')
@@ -325,13 +342,13 @@ export class DataService {
       return [];
     }
 
-    return data as CellEvent[];
+    return data as any[];
   }
 
   /**
    * Buscar próximos eventos
    */
-  static async getUpcomingEvents(userId: string, limit: number = 5): Promise<CellEvent[]> {
+  static async getUpcomingEvents(userId: string, limit: number = 5): Promise<any[]> {
     const { data, error } = await supabase
       .from('events')
       .select('*')
@@ -345,13 +362,13 @@ export class DataService {
       return [];
     }
 
-    return data as CellEvent[];
+    return data as any[];
   }
 
   /**
    * Criar evento
    */
-  static async createEvent(userId: string, event: Partial<CellEvent>): Promise<CellEvent | null> {
+  static async createEvent(userId: string, event: Partial<any>): Promise<any | null> {
     const { data, error } = await supabase
       .from('events')
       .insert({
@@ -371,6 +388,6 @@ export class DataService {
       return null;
     }
 
-    return data as CellEvent;
+    return data as any;
   }
 }

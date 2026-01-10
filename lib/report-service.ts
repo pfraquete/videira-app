@@ -42,7 +42,7 @@ export class ReportService {
 
     return {
       cell,
-      members: members.sort((a, b) => a.nome.localeCompare(b.nome)),
+      members: members.sort((a: any, b: any) => a.nome.localeCompare(b.nome)),
       generatedAt: new Date().toISOString(),
     };
   }
@@ -59,7 +59,7 @@ export class ReportService {
       DataService.getMembers(userId),
     ]);
 
-    const activeMembers = members.filter(m => m.status === 'Ativo');
+    const activeMembers = members.filter((m: any) => m.status === 'Ativo');
     const endDate = new Date();
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - (weeks * 7));
@@ -75,7 +75,7 @@ export class ReportService {
 
       const attendance = await DataService.getAttendanceByDate(userId, dateStr);
       
-      const memberAttendance = activeMembers.map(member => {
+      const memberAttendance = activeMembers.map((member: any) => {
         const record = attendance.find(a => a.member_id === member.id);
         return {
           name: member.nome,
@@ -83,7 +83,7 @@ export class ReportService {
         };
       });
 
-      const presentCount = memberAttendance.filter(m => m.present).length;
+      const presentCount = memberAttendance.filter((m: any) => m.present).length;
       const percentage = activeMembers.length > 0
         ? Math.round((presentCount / activeMembers.length) * 100)
         : 0;

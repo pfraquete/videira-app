@@ -1,5 +1,6 @@
 import { supabase } from './supabase';
 import { CacheService } from './cache-service';
+import { ReminderService } from './reminder-service';
 
 export interface Event {
   id: number;
@@ -173,6 +174,21 @@ export class EventService {
         return null;
       }
 
+      // Agendar lembretes para o novo evento
+      if (data) {
+        const eventDate = new Date(data.event_date);
+        if (data.event_time) {
+          const [hours, minutes] = data.event_time.split(':').map(Number);
+          eventDate.setHours(hours, minutes, 0, 0);
+        } else {
+          eventDate.setHours(19, 30, 0, 0);
+        }
+        
+        // Agendar lembretes (1 dia antes e 1 hora antes)
+        await ReminderService.scheduleEventReminder(data.id, data.title, eventDate, 'day_before');
+        await ReminderService.scheduleEventReminder(data.id, data.title, eventDate, 'hour_before');
+      }
+
       return data;
     } catch (error) {
       console.error('Error in createEvent:', error);
@@ -229,6 +245,9 @@ export class EventService {
         console.error('Error deleting event:', error);
         return false;
       }
+
+      // Cancelar lembretes do evento excluído
+      await ReminderService.cancelEventReminders(eventId);
 
       return true;
     } catch (error) {
