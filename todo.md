@@ -170,3 +170,28 @@
 - [x] Upload de fotos
 - [x] Visualização em modal
 - [x] Organização por álbuns
+
+
+## Novas Funcionalidades (v2.0)
+
+### Escala de Servos (App Mobile)
+- [x] Serviço de escalas com funções (louvor, lanche, recepção, etc.)
+- [x] Tela de visualização de escalas mensais
+- [x] Tela de criação/edição de escalas
+- [x] Navegação entre meses
+
+### Escala de Servos (Versão Web)
+- [x] Serviço de escalas para web
+- [x] Componente de calendário de escalas
+- [x] Interface de criação de escalas
+
+### Comentários nas Fotos (App Mobile)
+- [x] Serviço de comentários em fotos
+- [x] Componente de lista de comentários
+- [x] Funcionalidade de adicionar/excluir comentários
+- [x] Contador de comentários no grid de fotos
+
+### Comentários nas Fotos (Versão Web)
+- [x] Serviço de comentários para web
+- [x] Componente de comentários no modal de foto
+- [x] Interface de adicionar comentários

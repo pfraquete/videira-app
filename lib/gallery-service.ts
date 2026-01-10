@@ -33,7 +33,17 @@ export interface GalleryStats {
   photos_this_month: number;
 }
 
+export interface PhotoComment {
+  id: string;
+  photo_id: string;
+  user_id: string;
+  user_name: string;
+  text: string;
+  created_at: string;
+}
+
 const CACHE_KEY = 'gallery_cache';
+const COMMENTS_CACHE_KEY = 'gallery_comments_cache';
 const PHOTOS_DIR = `${FileSystem.documentDirectory}photos/`;
 
 export const GalleryService = {
@@ -310,6 +320,94 @@ export const GalleryService = {
 
   async clearCache(): Promise<void> {
     await AsyncStorage.removeItem(CACHE_KEY);
+    await AsyncStorage.removeItem(COMMENTS_CACHE_KEY);
+  },
+
+  // === COMENTÁRIOS ===
+
+  // Adicionar comentário a uma foto
+  async addComment(
+    photoId: string,
+    userId: string,
+    userName: string,
+    text: string
+  ): Promise<PhotoComment | null> {
+    try {
+      const comment: PhotoComment = {
+        id: `comment-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        photo_id: photoId,
+        user_id: userId,
+        user_name: userName,
+        text,
+        created_at: new Date().toISOString(),
+      };
+
+      const comments = await this.getCommentsCache();
+      comments.push(comment);
+      await this.saveCommentsCache(comments);
+
+      return comment;
+    } catch (error) {
+      console.error('Error adding comment:', error);
+      return null;
+    }
+  },
+
+  // Obter comentários de uma foto
+  async getComments(photoId: string): Promise<PhotoComment[]> {
+    try {
+      const comments = await this.getCommentsCache();
+      return comments
+        .filter(c => c.photo_id === photoId)
+        .sort((a, b) => 
+          new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+        );
+    } catch (error) {
+      console.error('Error getting comments:', error);
+      return [];
+    }
+  },
+
+  // Excluir comentário
+  async deleteComment(commentId: string, userId: string): Promise<boolean> {
+    try {
+      const comments = await this.getCommentsCache();
+      const index = comments.findIndex(c => c.id === commentId && c.user_id === userId);
+      
+      if (index === -1) return false;
+
+      comments.splice(index, 1);
+      await this.saveCommentsCache(comments);
+
+      return true;
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+      return false;
+    }
+  },
+
+  // Contar comentários de uma foto
+  async getCommentCount(photoId: string): Promise<number> {
+    try {
+      const comments = await this.getCommentsCache();
+      return comments.filter(c => c.photo_id === photoId).length;
+    } catch (error) {
+      return 0;
+    }
+  },
+
+  // Cache de comentários
+  async getCommentsCache(): Promise<PhotoComment[]> {
+    try {
+      const cached = await AsyncStorage.getItem(COMMENTS_CACHE_KEY);
+      return cached ? JSON.parse(cached) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  async saveCommentsCache(comments: PhotoComment[]): Promise<void> {
+    await AsyncStorage.setItem(COMMENTS_CACHE_KEY, JSON.stringify(comments));
   },
 };
 
