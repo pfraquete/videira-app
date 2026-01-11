@@ -331,7 +331,7 @@ export default function HomeScreen() {
               <IconSymbol name="person.2.fill" size={40} color={colors.muted} />
             </View>
             <Text className="text-foreground font-bold text-lg text-center">
-              Bem-vindo ao Videira!
+              Bem-vindo ao Ekkle!
             </Text>
             <Text className="text-muted text-center mt-2">
               Entre em contato com seu líder de célula para participar das atividades.

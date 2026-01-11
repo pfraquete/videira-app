@@ -4,7 +4,7 @@ import { Platform } from 'react-native';
 import Constants from 'expo-constants';
 
 // Get the app scheme from config
-const APP_SCHEME = Constants.expoConfig?.scheme || 'videira';
+const APP_SCHEME = Constants.expoConfig?.scheme || 'ekkle';
 
 export interface CellInvite {
   cellId: number;
@@ -61,7 +61,7 @@ export class InviteService {
       leader: invite.leaderName,
     });
     // This would be your web app URL in production
-    return `https://videira.app/invite?${params.toString()}`;
+    return `https://ekkle.app/invite?${params.toString()}`;
   }
 
   /**
@@ -74,7 +74,7 @@ Olá! Você foi convidado(a) para participar da nossa célula.
 
 👤 Líder: ${invite.leaderName}
 
-Para participar, baixe o app Videira e use o código:
+Para participar, baixe o app Ekkle e use o código:
 📱 ${invite.inviteCode}
 
 Ou acesse: ${this.generateWebInviteUrl(invite)}

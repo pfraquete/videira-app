@@ -30,8 +30,8 @@ export interface ScheduledReminder {
   scheduledFor: string;
 }
 
-const REMINDER_SETTINGS_KEY = '@videira_reminder_settings';
-const SCHEDULED_REMINDERS_KEY = '@videira_scheduled_reminders';
+const REMINDER_SETTINGS_KEY = '@ekkle_reminder_settings';
+const SCHEDULED_REMINDERS_KEY = '@ekkle_scheduled_reminders';
 
 const DEFAULT_SETTINGS: ReminderSettings = {
   eventsEnabled: true,

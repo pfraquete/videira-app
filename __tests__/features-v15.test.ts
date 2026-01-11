@@ -17,7 +17,7 @@ vi.mock('@react-native-async-storage/async-storage', () => ({
 }));
 
 vi.mock('expo-linking', () => ({
-  createURL: vi.fn((path, options) => `videira://${path}?${new URLSearchParams(options?.queryParams).toString()}`),
+  createURL: vi.fn((path, options) => `ekkle://${path}?${new URLSearchParams(options?.queryParams).toString()}`),
   canOpenURL: vi.fn().mockResolvedValue(true),
   openURL: vi.fn().mockResolvedValue(undefined),
 }));
@@ -178,7 +178,7 @@ Olá! Você foi convidado(a) para participar da nossa célula.
 
 👤 Líder: ${invite.leaderName}
 
-Para participar, baixe o app Videira e use o código:
+Para participar, baixe o app Ekkle e use o código:
 📱 ${invite.inviteCode}
 
 Te esperamos! 🙏`;
@@ -195,5 +195,5 @@ function generateMockInviteUrl(invite: {
     cell: invite.cellName,
     leader: invite.leaderName,
   });
-  return `videira://invite?${params.toString()}`;
+  return `ekkle://invite?${params.toString()}`;
 }

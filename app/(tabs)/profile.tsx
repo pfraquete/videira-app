@@ -352,7 +352,7 @@ export default function ProfileScreen() {
 
         {/* Version */}
         <View className="items-center pb-6">
-          <Text className="text-muted text-sm">Videira App v1.2.0</Text>
+          <Text className="text-muted text-sm">Ekkle App v1.2.0</Text>
         </View>
       </ScrollView>
     </ScreenContainer>

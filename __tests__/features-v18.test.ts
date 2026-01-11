@@ -35,7 +35,7 @@ describe('Engagement Service', () => {
   it('should calculate engagement levels correctly', () => {
     // Test engagement level calculation
     const getEngagementLevel = (points: number) => {
-      if (points >= 1000) return { level: 'Videira', icon: '🍇' };
+      if (points >= 1000) return { level: 'Ekkle', icon: '🍇' };
       if (points >= 500) return { level: 'Árvore', icon: '🌳' };
       if (points >= 200) return { level: 'Planta', icon: '🌿' };
       if (points >= 50) return { level: 'Broto', icon: '🌱' };
@@ -46,8 +46,8 @@ describe('Engagement Service', () => {
     expect(getEngagementLevel(50).level).toBe('Broto');
     expect(getEngagementLevel(200).level).toBe('Planta');
     expect(getEngagementLevel(500).level).toBe('Árvore');
-    expect(getEngagementLevel(1000).level).toBe('Videira');
-    expect(getEngagementLevel(1500).level).toBe('Videira');
+    expect(getEngagementLevel(1000).level).toBe('Ekkle');
+    expect(getEngagementLevel(1500).level).toBe('Ekkle');
   });
 
   it('should calculate points correctly', () => {

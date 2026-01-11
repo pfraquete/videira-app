@@ -80,7 +80,7 @@ describe('ReportService Module', () => {
     
     expect(content).toContain('RELATÓRIO DE MEMBROS');
     expect(content).toContain('RELATÓRIO DE PRESENÇAS');
-    expect(content).toContain('VIDEIRA');
+    expect(content).toContain('EKKLE');
   });
 });
 

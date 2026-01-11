@@ -1,6 +1,6 @@
 /** @type {const} */
 const themeColors = {
-  // Cores principais do Videira
+  // Cores principais do Ekkle
   primary: { light: '#6366f1', dark: '#818cf8' },      // Indigo - cor principal
   background: { light: '#ffffff', dark: '#0f172a' },   // Fundo
   surface: { light: '#f8fafc', dark: '#1e293b' },      // Cards e superfícies

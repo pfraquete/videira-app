@@ -5,8 +5,8 @@ import { CacheService } from './cache-service';
 
 // Storage keys
 const SYNC_KEYS = {
-  PENDING_OPERATIONS: 'videira_pending_operations',
-  SYNC_STATUS: 'videira_sync_status',
+  PENDING_OPERATIONS: 'ekkle_pending_operations',
+  SYNC_STATUS: 'ekkle_sync_status',
 };
 
 // Operation types

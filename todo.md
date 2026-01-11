@@ -1,4 +1,4 @@
-# Videira App - TODO
+# Ekkle App - TODO
 
 ## Configuração
 - [x] Configurar tema e cores do app
@@ -138,7 +138,7 @@
 
 ### Sistema de Engajamento
 - [x] Serviço de pontuação de engajamento
-- [x] Níveis de engajamento (Semente, Broto, Planta, Árvore, Videira)
+- [x] Níveis de engajamento (Semente, Broto, Planta, Árvore, Ekkle)
 - [x] Sistema de badges/conquistas
 - [x] Ranking de engajamento da célula
 
