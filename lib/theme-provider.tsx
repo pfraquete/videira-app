@@ -5,7 +5,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { SchemeColors, type ColorScheme } from "@/constants/theme";
 
-const THEME_STORAGE_KEY = "videira_theme_preference";
+const THEME_STORAGE_KEY = "ekkle_theme_preference";
 export type ThemePreference = "light" | "dark" | "system";
 
 type ThemeContextValue = {

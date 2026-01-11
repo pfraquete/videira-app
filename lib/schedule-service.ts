@@ -60,7 +60,7 @@ export interface MonthlySchedule {
   entries: ScheduleEntry[];
 }
 
-const CACHE_KEY = 'videira_schedules';
+const CACHE_KEY = 'ekkle_schedules';
 
 class ScheduleService {
   // Obter escalas de um mês

@@ -283,7 +283,7 @@ export default function ShareCellScreen() {
           </Text>
           <Text className="text-sm text-muted leading-5">
             1. Compartilhe o QR code ou código de convite{'\n'}
-            2. A pessoa baixa o app Videira{'\n'}
+            2. A pessoa baixa o app Ekkle{'\n'}
             3. Ela usa o código para solicitar entrada na célula{'\n'}
             4. Você aprova a solicitação no app
           </Text>

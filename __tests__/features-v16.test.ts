@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-describe('Videira App v1.6 - Chat, Orações e Calendário', () => {
+describe('Ekkle App v1.6 - Chat, Orações e Calendário', () => {
   describe('Chat Service', () => {
     it('deve ter estrutura de Conversation definida', () => {
       const conversation = {

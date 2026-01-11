@@ -59,9 +59,9 @@ export default function LoginScreen() {
           {/* Logo/Title */}
           <View className="items-center mb-12">
             <View className="w-20 h-20 bg-primary rounded-2xl items-center justify-center mb-4">
-              <Text className="text-4xl text-background font-bold">V</Text>
+              <Text className="text-4xl text-background font-bold">E</Text>
             </View>
-            <Text className="text-3xl font-bold text-foreground">Videira</Text>
+            <Text className="text-3xl font-bold text-foreground">Ekkle</Text>
             <Text className="text-muted mt-2">Gestão de Células</Text>
           </View>
 

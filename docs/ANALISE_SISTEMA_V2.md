@@ -1,4 +1,4 @@
-# Análise Completa do Sistema Videira v2.0
+# Análise Completa do Sistema Ekkle v2.0
 
 **Data:** 10 de Janeiro de 2026  
 **Autor:** Manus AI  
@@ -8,7 +8,7 @@
 
 ## Resumo Executivo
 
-Este documento apresenta uma análise completa do sistema Videira, verificando a integridade entre backend, frontend e banco de dados, além da acessibilidade de todas as páginas e funcionalidades implementadas. O sistema está em sua versão 2.0, com funcionalidades de **Escala de Servos** e **Comentários nas Fotos** recentemente implementadas.
+Este documento apresenta uma análise completa do sistema Ekkle, verificando a integridade entre backend, frontend e banco de dados, além da acessibilidade de todas as páginas e funcionalidades implementadas. O sistema está em sua versão 2.0, com funcionalidades de **Escala de Servos** e **Comentários nas Fotos** recentemente implementadas.
 
 ---
 
@@ -247,7 +247,7 @@ Várias funcionalidades estão implementadas apenas com armazenamento local, o q
 
 ## 6. Conclusão
 
-O sistema Videira v2.0 está funcional com a maioria das features implementadas corretamente. Os principais pontos de atenção são:
+O sistema Ekkle v2.0 está funcional com a maioria das features implementadas corretamente. Os principais pontos de atenção são:
 
 1. **A tela de Escalas no app mobile não possui link de acesso** - requer correção imediata
 2. **Várias funcionalidades usam apenas armazenamento local** - dados não sincronizam entre dispositivos

@@ -5,12 +5,12 @@ import { Event } from './event-service';
 
 // Cache keys
 const CACHE_KEYS = {
-  MEMBERS: 'videira_cache_members',
-  EVENTS: 'videira_cache_events',
-  CELL: 'videira_cache_cell',
-  ATTENDANCE: 'videira_cache_attendance',
-  LAST_SYNC: 'videira_cache_last_sync',
-  IS_OFFLINE: 'videira_is_offline',
+  MEMBERS: 'ekkle_cache_members',
+  EVENTS: 'ekkle_cache_events',
+  CELL: 'ekkle_cache_cell',
+  ATTENDANCE: 'ekkle_cache_attendance',
+  LAST_SYNC: 'ekkle_cache_last_sync',
+  IS_OFFLINE: 'ekkle_is_offline',
 };
 
 // Cache expiration time (24 hours)

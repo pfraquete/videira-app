@@ -1,8 +1,8 @@
-# Videira App - Design Document
+# Ekkle App - Design Document
 
 ## 1. Visão Geral
 
-Aplicativo mobile para gerenciamento de células da Igreja Videira, destinado aos perfis:
+Aplicativo mobile para gerenciamento de células da Igreja, destinado aos perfis:
 - **Pastor**: Visão geral de discipuladores e células
 - **Discipulador**: Acompanhamento de líderes e células
 - **Líder de Célula**: Gestão completa da célula

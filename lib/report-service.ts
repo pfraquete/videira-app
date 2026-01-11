@@ -124,7 +124,7 @@ export class ReportService {
     const lines: string[] = [];
     
     lines.push('═══════════════════════════════════════════');
-    lines.push('       RELATÓRIO DE MEMBROS - VIDEIRA');
+    lines.push('       RELATÓRIO DE MEMBROS - EKKLE');
     lines.push('═══════════════════════════════════════════');
     lines.push('');
     
@@ -182,7 +182,7 @@ export class ReportService {
     const lines: string[] = [];
     
     lines.push('═══════════════════════════════════════════');
-    lines.push('      RELATÓRIO DE PRESENÇAS - VIDEIRA');
+    lines.push('      RELATÓRIO DE PRESENÇAS - EKKLE');
     lines.push('═══════════════════════════════════════════');
     lines.push('');
     

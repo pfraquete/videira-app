@@ -62,9 +62,9 @@ const ENGAGEMENT_LEVELS = [
   { level: 2, name: 'Broto', min_points: 50 },
   { level: 3, name: 'Planta', min_points: 150 },
   { level: 4, name: 'Árvore', min_points: 300 },
-  { level: 5, name: 'Videira', min_points: 500 },
-  { level: 6, name: 'Videira Frutífera', min_points: 800 },
-  { level: 7, name: 'Videira Madura', min_points: 1200 },
+  { level: 5, name: 'Ekkle', min_points: 500 },
+  { level: 6, name: 'Ekkle Frutífero', min_points: 800 },
+  { level: 7, name: 'Ekkle Maduro', min_points: 1200 },
 ];
 
 // Badges disponíveis
@@ -77,7 +77,7 @@ const AVAILABLE_BADGES: Badge[] = [
   { id: 'testimony_sharer', name: 'Testemunho Vivo', description: 'Compartilhou 5 testemunhos', icon: '📢' },
   { id: 'servant', name: 'Servo', description: 'Serviu 5 vezes na célula', icon: '🤝' },
   { id: 'birthday_friend', name: 'Amigo Fiel', description: 'Parabenizou 10 aniversariantes', icon: '🎂' },
-  { id: 'level_5', name: 'Videira', description: 'Alcançou o nível Videira', icon: '🍇' },
+  { id: 'level_5', name: 'Ekkle', description: 'Alcançou o nível Ekkle', icon: '🍇' },
 ];
 
 const CACHE_KEY = 'engagement_cache';
@@ -251,7 +251,7 @@ export const EngagementService = {
       earnedBadges.push({ ...AVAILABLE_BADGES.find(b => b.id === 'birthday_friend')! });
     }
 
-    // Nível Videira
+    // Nível Ekkle
     const totalPoints = records.reduce((sum, r) => sum + r.points, 0);
     if (totalPoints >= 500) {
       earnedBadges.push({ ...AVAILABLE_BADGES.find(b => b.id === 'level_5')! });

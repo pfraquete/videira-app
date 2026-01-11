@@ -46,9 +46,9 @@ export default function EngagementScreen() {
       '#84CC16', // 2 - Broto
       '#22C55E', // 3 - Planta
       '#10B981', // 4 - Árvore
-      '#8B5CF6', // 5 - Videira
-      '#A855F7', // 6 - Videira Frutífera
-      '#EC4899', // 7 - Videira Madura
+      '#8B5CF6', // 5 - Ekkle
+      '#A855F7', // 6 - Ekkle Frutífero
+      '#EC4899', // 7 - Ekkle Maduro
     ];
     return levelColors[level - 1] || levelColors[0];
   };

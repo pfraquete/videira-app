@@ -21,7 +21,7 @@ export interface GoalProgress {
   overall: number; // Progresso geral em %
 }
 
-const GOALS_STORAGE_KEY = 'videira_cell_goals';
+const GOALS_STORAGE_KEY = 'ekkle_cell_goals';
 
 export class GoalsService {
   /**

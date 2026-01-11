@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { DataService } from './data-service';
 import { Member, CellEvent } from './supabase';
 
-const NOTIFICATION_SETTINGS_KEY = '@videira_notification_settings';
+const NOTIFICATION_SETTINGS_KEY = '@ekkle_notification_settings';
 
 export interface NotificationSettings {
   enabled: boolean;

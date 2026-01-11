@@ -75,7 +75,7 @@ export default function SignupScreen() {
             {/* Header */}
             <View className="items-center mb-8">
               <Text className="text-3xl font-bold text-foreground">Criar Conta</Text>
-              <Text className="text-muted mt-2">Junte-se à comunidade Videira</Text>
+              <Text className="text-muted mt-2">Junte-se à comunidade Ekkle</Text>
             </View>
 
             {/* Form */}
