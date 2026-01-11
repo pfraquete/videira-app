@@ -18,7 +18,6 @@ import {
 import type { EdgeInsets, Metrics, Rect } from "react-native-safe-area-context";
 
 import { trpc, createTRPCClient } from "@/lib/trpc";
-import { initManusRuntime, subscribeSafeAreaInsets } from "@/lib/_core/manus-runtime";
 import { SyncService } from "@/lib/sync-service";
 import { CacheService } from "@/lib/cache-service";
 
@@ -36,13 +35,11 @@ export default function RootLayout() {
   const [insets, setInsets] = useState<EdgeInsets>(initialInsets);
   const [frame, setFrame] = useState<Rect>(initialFrame);
 
-  // Initialize Manus runtime for cookie injection from parent container
+  // Initialize cache and sync services
   useEffect(() => {
-    initManusRuntime();
-    // Initialize cache and sync services
     CacheService.initialize();
     SyncService.initialize();
-    
+
     return () => {
       SyncService.cleanup();
     };
@@ -55,8 +52,8 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (Platform.OS !== "web") return;
-    const unsubscribe = subscribeSafeAreaInsets(handleSafeAreaUpdate);
-    return () => unsubscribe();
+    // Safe area insets update handler for web
+    // Can be extended to listen for resize events if needed
   }, [handleSafeAreaUpdate]);
 
   // Create clients once and reuse them
@@ -96,7 +93,6 @@ export default function RootLayout() {
             <Stack screenOptions={{ headerShown: false }}>
               <Stack.Screen name="(auth)" />
               <Stack.Screen name="(tabs)" />
-              <Stack.Screen name="oauth/callback" />
             </Stack>
             <StatusBar style="auto" />
           </AuthProvider>
